@@ -1,0 +1,195 @@
+$main_padding: 40px;
+$main_container: 270px;
+$main_border-radius: 3px;
+$border_basics: 1px solid;
+$color_button: #3897f0;
+$span_account: #3897f0;
+$main_percent: 100%;
+$height_button: 36px;
+$background_gral: #f0f0f0;
+$backcolor_input: #fafafa;
+$color_font_button: #fafafa;
+$border_color: #EFEFEF;
+$color_btnfb: white;
+$back_container_color: white;
+$color_footer: black;
+$border_gral: #E6E6E6;
+$main_fontfamily: sans-serif;
+$margin_gral: 5px;
+$main_color: #999;
+$main_fontsize: 14px;
+$padding_gral: 0 8px;
+$margin_gral_center: 13px auto;
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+body{
+    background-color: $background_gral;
+}
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $back_container_color;
+    
+    font: {
+        family: $main_fontfamily;
+        size: $main_fontsize;
+    }
+    
+    color: $main_color;
+    
+    width: $main_container;
+    border: $border_basics $border_gral;
+    border-radius: $main_border-radius;
+    
+    
+    padding: ($main_padding - 10px) $main_padding $main_padding $main_padding;
+    margin: $margin_gral_center;
+
+    &__logo{
+        img{
+            width: 175px;
+            height: 51px;
+            margin-bottom: 4*$margin_gral;
+        }
+    }
+
+    &__buttonfb{
+        
+        display: flex;
+        width: $main_percent;
+        margin: 0 $margin_gral;
+        
+        button{
+            flex :1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color_button;
+            color: $color_btnfb;
+            border-radius: $main_border-radius;
+            border-color: $color_button;
+            height: $height_button;
+            i{  
+                font-size: $main_fontsize+7px;
+                padding: $padding_gral;
+                margin: 0;
+            }
+            p{
+                margin: 0;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    &__or{
+        width: $main_percent;
+        display: flex;
+        align-items: center;
+        margin: $margin_gral 0;
+        .or{
+            
+            width: 100%;
+        }
+        p{
+            font-weight: bold;
+            padding: $padding_gral;
+        }
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        width: $main_percent;
+       input{
+        flex :1;
+        height: $height_button;
+        border-radius: $main_border-radius;
+        border: $border_basics $border_color;
+        margin: $margin_gral 0;
+        padding: $padding_gral;
+        font-weight: bold;
+        background-color: $backcolor_input;
+        @include input-placeholder{
+            color: $main_color;
+        }
+       }
+
+    }
+
+    &__signup{
+        margin: $margin_gral 0;
+        width: $main_percent;
+        display: flex;
+
+        button{
+            flex :1;
+            align-items: center;
+            justify-content: center;
+            background-color: $color_button;
+            color: $color_btnfb;
+            border-radius: $main_border-radius;
+            border-color: $color_button;
+            height: $height_button;
+
+            p{
+                margin: 0;
+
+            }
+        }
+    }
+
+    &__notes{
+       
+        p{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0; 
+        }
+
+        span{
+            font-weight: bold;
+            margin: 0 auto;
+            margin-top: -10px;
+        }
+    }
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $back_container_color;
+    
+    font: {
+        family: $main_fontfamily;
+        size: $main_fontsize;
+    }
+    color: $main_color;
+    width: $main_container;
+    height: 70px;
+    border: $border_basics $border_gral;
+    border-radius: $main_border-radius;
+    padding: 0 $main_padding;
+    margin: $margin_gral_center;
+
+    p{
+        margin: 0;
+        font-weight: inherit;
+        color: $color_footer;
+        a {
+            text-decoration: none;
+            color: $span_account;
+            font-weight: bolder;
+        }
+    }
+}
+
